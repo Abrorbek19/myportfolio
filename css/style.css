@@ -9,7 +9,11 @@
 *{
     margin: 0 ;
     padding: 0 ;
+    box-sizing: border-box;
 }
+/*menu qismi uchun stil*/
+
+
 .width-992{
     display: none;
 }
@@ -42,6 +46,13 @@
     opacity: 0.8;
     font-family: WorkSans,sans-serif;
 }
+.menu-body a:hover{
+    color: #1CB698 ;
+    /*transform: rotateX(180deg);*/
+    cursor: pointer;
+    transition: 0.3s;
+    /*box-shadow: 10px 10px 5px 3px ;*/
+}
 .header-bg{
     background-color: #1E2326;
 }
@@ -51,6 +62,9 @@
 .aligh-item{
     align-items: center;
 }
+/*section-1 qismi va card qismi*/
+
+
 .section-1{
     background-image: url("../image/top_sider_bg.jpeg");
     background-position: center center;
@@ -74,11 +88,232 @@
     border-radius: 100%;
 }
 .card-1{
-    margin-left: 35%;
-    margin-right: 35%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 200px;
+}
+.mycard{
+    position: relative;
+    width: 420px;
+    height: 510px;
+    background: #1E2326;
+    /*background: red;*/
+    border-radius: 20px;
+    box-shadow: 0 35px 80px rgba(0,0,0,0.15);
+}
+.imgBox{
+    position: absolute;
+    left: 50%;
+    top: -20%;
+    transform: translateX(-50%);
+    width: 320px;
+    height: 320px;
+    /*background: #ffffff;*/
+    border-radius: 100%;
+    /*box-shadow: 0 15px 50px rgba(0,0,0,0.35);*/
+    /*overflow: hidden;*/
+}
+.circle-animation span{
+    display: inline-block;
+    width: 305px;
+    height: 305px;
+    border-radius: 100%;
+    margin: 0 5px;
+    position:relative;
+}
+.circle-animation span::before {
+    content: "";
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+    background-color: inherit;
+    border-radius: 100%;
+    z-index: 1;
+    animation: ripple 0.7s linear infinite;
+    left: 0;
+    margin: 0 auto;
+    /*position: absolute;*/
+    right: 0;
+    top: 15%;
+    /*z-index: -1;*/
+    /*transform: translateY(-50%);*/
+}
+@keyframes ripple {
+    0% {
+        box-shadow: 0 0 0 0 rgba(28, 182, 152, 0.2), 0 0 0 1em rgba(28, 182, 152, 0.2), 0 0 0 3em rgba(28, 182, 152, 0.2), 0 0 0 5em rgba(28, 182, 152, 0.2);
+    }
+    100% {
+        box-shadow: 0 0 0 1em rgba(28, 182, 152, 0.2), 0 0 0 3em rgba(28, 182, 152, 0.2), 0 0 0 5em rgba(28, 182, 152, 0.2), 0 0 0 8em rgba(28, 182, 152, 0);
+    }
+}
+/*@keyframes ripple {*/
+/*    from {*/
+/*        opacity: 1;*/
+/*        transform: scale(0);*/
+/*    }*/
+/*    to {*/
+/*        opacity: 0;*/
+/*        transform: scale(3);*/
+/*    }*/
+/*}*/
+.circle-animation span:first-child{
+    background-color: #1CB698;
+    transform: scale(0.9);
 }
 
+span:first-child::before {
+    animation-delay: 0.4s;
+}
+.imgBox img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+    height: 100%;
+    object-fit: cover;
+    border: 12px solid #1CB698;
+    border-radius: 100%;
+}
+.mycard .content{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+.mycard .content .details{
+    padding: 105px 40px;
+    text-align: center;
+    width: 100%;
+}
+.mycard .content .details h2{
+    font-size: 48px;
+    font-weight: 600;
+    font-family: Righteous;
+    color: white;
+    line-height: 50px;
+    text-transform: uppercase;
+}
+.mycard .content .details  h3{
+    font-size: 17px;
+    font-weight: 500;
+    color: white;
+    text-transform: uppercase;
+}
+.mycard .content .details .Myaccount{
+    position: absolute;
+    margin-top: 20px;
+}
+.social{
+    margin: 0 auto;
+}
+.social li{
+    list-style-type: none;
+    display: inline-block;
+    margin: 0 5px;
+}
+.social li a {
+    font-size: 20px;
+    color: #FFF;
+    width: 42px;
+    height: 42px;
+    line-height: 42px;
+    text-align: center;
+    display: block;
+    border-radius: 100%;
+    border: 1px solid #FFF;
+}
+.social li a:hover{
+    border: 1px solid #1CB698;
+    transition: 0.3s ease-in-out;
+   background-color: #1CB698;
+}
 
-
-
-
+/* section-2 uchun va about me qismi*/
+.my-about{
+    margin: 0 auto;
+    display: table;
+}
+.my-about img{
+    width: 60px;
+    height: auto;
+    padding: 10px;
+    margin: 0 auto 10px;
+    border-radius: 5px;
+    background: #252A2E;
+    box-shadow: 0 2px 5px 0 rgb(0 0 0 / 16%), 0 2px 10px 0 rgb(0 0 0 / 12%);
+    display: block;
+}
+#about{
+    padding: 65px 0;
+    background-color: #1e2326;
+}
+.my-about h2{
+    font-family: 'Righteous', cursive;
+    color: #FFF;
+    font-size: 48px;
+    line-height: 50px;
+    padding-bottom: 20px;
+    position: relative;
+    margin-bottom: 30px;
+}
+.my-about h2::before{
+    position: absolute;
+    content: "";
+    border-bottom: 1px solid #1CB698;
+    width: 80px;
+    bottom: 8px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    display: table;
+}
+.my-about h2::after{
+    position: absolute;
+    content: "";
+    border-bottom: 1px solid #1CB698;
+    width: 40px;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto;
+    display: table;
+}
+.my-information p span{
+    color: #1CB698;
+    font-family: WorkSans;
+}
+.my-information p{
+    color: white;
+    font-family: WorkSans;
+}
+.person h3{
+    color: white;
+    font-family: Righteous;
+}
+.person{
+    margin-bottom: 25px ;
+}
+.bpewaj h6{
+    margin-bottom: 0;
+    line-height: 35px;
+    color: #1CB698;
+    font-family: WorkSans;
+}
+.malumot p{
+    line-height: 35px;
+    margin-bottom: 0;
+    color: white;
+    font-family: WorkSans;
+}
+.fa-gamepad-modern::before{
+    content: "\f11b";
+    color: white;
+}
